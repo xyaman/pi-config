@@ -5,6 +5,9 @@
     "keywords": ["pi-package"],
     "type": "module",
     "license": "MIT",
+    "peerDependencies": {
+        "typebox": "*"
+    },
     "pi": {
         "extensions": ["./extensions"],
         "themes": ["./themes"],
