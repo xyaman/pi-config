@@ -3,10 +3,10 @@ import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 export default function (pi: ExtensionAPI) {
 	let noEditMode = false;
 
-	// Toggle with Ctrl+.
-	pi.registerShortcut("ctrl+.", {
+	// Toggle via /noedit command.
+	pi.registerCommand("noedit", {
 		description: "Toggle no-edit mode (blocks edit/write tools)",
-		handler: async (ctx) => {
+		handler: async (_args, ctx) => {
 			noEditMode = !noEditMode;
 			const msg = noEditMode ? "🔒 No-edit mode ON" : "🔓 No-edit mode OFF";
 			const level = noEditMode ? "warning" : "info";
@@ -34,7 +34,7 @@ export default function (pi: ExtensionAPI) {
 		ctx.ui.notify(`Blocked ${event.toolName}: no-edit mode is active`, "warning");
 		return {
 			block: true,
-			reason: "No-edit mode is active. Press Ctrl+. to disable it before modifying files.",
+			reason: "No-edit mode is active. Use /noedit to disable it before modifying files.",
 		};
 	});
 }
