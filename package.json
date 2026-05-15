@@ -1,0 +1,14 @@
+{
+    "name": "pi-config",
+    "version": "1.0.0",
+    "description": "Personal pi coding agent configuration",
+    "keywords": ["pi-package"],
+    "type": "module",
+    "license": "MIT",
+    "pi": {
+        "extensions": ["./extensions"],
+        "themes": ["./themes"],
+        "skills": ["./skills"],
+        "prompts": ["./prompts"]
+    }
+}
